@@ -1,0 +1,309 @@
+{% extends "app/Visitor-Customer/user_base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'user_assets/assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="nservice.css">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>DustToShine.io</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="hover-underline-animation" href="index.html">Home</a></li>
+          <li><a class="hover-underline-animation" href="about.html">About Us</a></li>
+          <li><a class="hover-underline-animation" href="nservice.html">Services</a></li>
+          <li><a class="hover-underline-animation" href="contact.html">Contact</a></li>
+          <li><a class="hover-underline-animation" href="franchise.html">Franchise</a></li>
+          <li><a class="getstarted scrollto" href="login.html">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- service -->
+  <section class="section" id="services">
+    <div class="section-title">
+      <h2>Services</h2>
+      <h3><span class="gradient-underline">You Leave It, We Clean It </span></h3>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/wash cloth.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Simple Wash</h4>
+              <p>100% biodegradable detergents are used to wash the clothes. Ideal for everyday, gym, and casual wear.
+              </p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="swash.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/t shirt wash.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Dry Cleaning</h4>
+              <p>A chemical solvent is used to clean clothing. We utilise a Hydro Carbon equipment to process your
+                delicate clothing!</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="dryc.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/washing liquid (2).svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Petrol Wash</h4>
+              <p>These are a good option for keeping your pricey garments looking new and fresh every time you wear
+                them.</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="petrol.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/iron stand.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Steam Press</h4>
+              <p>To protect clothing's softness and ensure minimal heat exposure, we use steam ironing machines. finest
+                individual touch cleaning</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="steam.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/scrub.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Stain Removal</h4>
+              <p>We use only natural products and give your clothing the utmost care, leaving it spotless. Be Spotless,
+                Be Bright</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="stain.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/sneker shoe.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Shoe Cleaning</h4>
+              <p>Your worn-out shoe will be transformed into a brand-new one by a shoe laundry service. We can manage
+                all shoe variations.</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="shoe.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/suitcase.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Bag Cleaning</h4>
+              <p>Never bring your dirty bag to a party. We professionally clean your pricey bags so they shine like
+                crystal.</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="bag.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/plain curtain.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Curtain Cleaning</h4>
+              <p>Our Curtain Care services are designed to give your premium curtains a spa-like treatment. A makeover
+                to your curtains</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="curtain.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/red mat.svg' %}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">Carpet Cleaning</h4>
+              <p>Our carpet cleaning service specialists are outfitted with cutting-edge industrial technology to give
+                you the best service possible.</p>
+            </div>
+            <!-- <div class="section-title">
+                            <a href="carpet.html" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div> -->
+          </div>
+        </div>
+        <div class="section-title">
+          <a href="alert.html" class="btn">
+            <span>View Service</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /service -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Be Spotless, Be Bright</h4>
+            <p>One step will bring brightness into your life, Don't worry about stains we'll cast away all your worries.
+              you just  wear it, and we clean it. To learn more about us, Click below button.  One call cleans it all.
+              Your Choice, Our Promise...</p>
+            <div class="section-title">
+              <a href="about.html" class="btn">
+                <span>Know More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>DustToShine.io</h3>
+            <p>
+              A108 Adam Street <br>
+              Navrangpura, Ahmedabad-380009<br>
+              India <br><br>
+              <strong>Phone:</strong> +91 81548 98059<br>
+              <strong>Email:</strong> info@dts.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Top 5 Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dry Cleaning</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Steam Press</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Simple Wash</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Stain Removal</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Shoe Cleaning</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <!-- <h4>Our Social Networks</h4>
+            <p>Get more updates from our social media pages.</p> -->
+            <p>Get more updates by Join Us.</p>
+            <img src="{% static 'user_assets/assets/img/dtssidelogo.png' %}" alt="" height="220px" width="200px">
+            <!-- <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>DustToShine</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="index.html">DustToShine.io</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'user_assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'user_assets/assets/js/main.js' %}"></script>
+  {% endblock %}
+</body>
+
+</html>

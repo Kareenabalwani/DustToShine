@@ -1,0 +1,748 @@
+{% extends "app/Visitor-Customer/user_base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'user_assets/assets/css/style.css' %}" rel="stylesheet">
+    <link href="uprofile.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1 class="text-light"><a href="index.html"><span>DustToShine.io</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="hover-underline-animation" href="user.html">Home </a></li>
+                    <li><a class="hover-underline-animation" href="uabout.html">About Us</a></li>
+                    <li><a class="hover-underline-animation" href="uservice.html">Services</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>  -->
+
+                    <li><a class="hover-underline-animation" href="ucontact.html">Contact</a></li>
+                    <li><a class="hover-underline-animation" href="ufranchise.html">Franchise</a></li>
+                    <li class="hover-underline-animation"><a href="ucart.html"><span><i class="bi bi-basket3"></i> Laundry Bag</span></a>
+                    <li class="dropdown"><a href="#"><span><img src="{% static 'user_assets/assets/img/g user.svg' %}" alt="Image"
+                                    height="40px"> Sofiya</span> <i class="bi bi-chevron-down"></i></a>
+                                    
+                        <ul>
+                            <li><a href="ueditprofile.html">Edit Profile</a></li>
+                            <!-- Deep Drop Down -->
+                            <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
+                                        class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li> -->
+                            <li><a href="order.html">My Orders</a></li>
+                            <!-- <li><a href="#">Service Record</a></li> -->
+                            <!-- <li><a href="#">Available Points</a><hr></li> -->
+                            <hr>
+                            <li><a href="changepass.html">Change Password</a></li>
+                            <li><a href="index.html">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= 1st  Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1>Better luandry experience with <span class="gradient-underline">DustToShine.io</span></h1>
+                    <h2>Pamper your Cloths with the best services provided by us.</h2>
+                    <div>
+                        <br>
+                        <a href="uabout.html" class="btn btn-medium btn-round-full">Know Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                    <img src="{% static 'user_assets/assets/img/delivery-man-svgrepo-com.svg' %}" class="img-fluid animated" alt="" height="250px"
+                        width="400px">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End 1st sec-->
+
+    <main id="main">
+
+        <!-- ======= About 2nd Section  ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="row justify-content-between">
+                    <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                        <img src="{% static 'user_assets/assets/img/hanging cloth.svg' %}" class="img-fluid" alt="" data-aos="zoom-in"
+                            height="180px" width="300px">
+                    </div>
+                    <div class="col-lg-6 pt-5 pt-lg-0">
+                        <h3 data-aos="fade-up">Clean clothing <span class="gradient-underline">gives you
+                                confidence</span>, and we can make them for you.</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                            "Cleanliness is next to Godliness.", Do not allow your laundry issue bring you down. Give it
+                            to us, we'll treat it as if it were our own.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <!-- <i class="bx bx-receipt"></i> -->
+                                <i class="bi bi-emoji-laughing"></i>
+                                <h4>5k+ Happy Offline Customers</h4>
+                                <p>Our greatest asset is the customer! Treat each customer as if they are the only one!
+                                </p>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <!-- <i class="bx bx-cube-alt"></i> -->
+                                <i class="bi bi-house-door"></i>
+                                <h4>Door-to-Door Services</h4>
+                                <p>Worry about pick-up/delivery? We have your back! We bring the store to your door.</p>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <!-- <i class="bx bx-cube-alt"></i> -->
+                                <i class="bi bi-alarm"></i>
+                                <h4>Urget Delivery</h4>
+                                <p>Last minutes Plans and dress is not ready? We don't let our customer down. We got it
+                                    settled for you.
+                                </p>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-check2-circle"></i>
+                                <h4>100% care provided</h4>
+                                <p>Your clothing's safety is on our shoulders. From laundry to dry-cleaning, we only use
+                                    environmentally
+                                    safe chemicals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About 2nd Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>Check out the great services we offer</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
+
+                            <img class="img-fluid" src="{% static 'user_assets/assets/img/iron.svg' %}" alt="Icon" height="50px" width="100px">
+
+                            <h4 class="title"><a href="">Steam Press</a></h4>
+                            <p class="description">To ensure minimal heat exposure and the continued suppleness of the
+                                clothing, we
+                                use steam ironing machines.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                            <!-- <div class="icon"><i class="bx bx-file"></i></div> -->
+                            <img class="img-fluid" src="{% static 'user_assets/assets/img/wedding frock.svg' %}" alt="Icon" height="50px"
+                                width="100px">
+                            <h4 class="title"><a href="">Stain Removal</a></h4>
+                            <p class="description">There are no stains we cannot handle. We can get it off from your
+                                favourite dress,
+                                without applying dangerous chemicals.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                            <!-- <div class="icon"><i class="bx bx-tachometer"></i></div> -->
+                            <img class="img-fluid" src="{% static 'user_assets/assets/img/suit.svg' %}" alt="Icon" height="50px" width="100px">
+                            <h4 class="title"><a href="">Dry Cleaning</a></h4>
+                            <p class="description">High-end dry cleaning is our area of expertise. You can rely on our
+                                cleaners to
+                                restore your clothing's original beauty. To look fresh, dress fresh.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon-box">
+                            <!-- <div class="icon"><i class="bx bx-world"></i></div> -->
+                            <img class="img-fluid" src="{% static 'user_assets/assets/img/high heels.svg' %}" alt="Icon" height="50px"
+                                width="100px">
+                            <h4 class="title"><a href="">Shoe Cleaning</a></h4>
+                            <p class="description">A clean shoe is a happy shoe, so let us take care of it for you. We
+                                change your
+                                worn-out shoe into a brand-new one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- add button -->
+            <div class="section-title">
+
+                <a href="uservice.html" class="btn">
+                    <span>View Services</span>
+                </a>
+            </div>
+        </section><!-- End Services Section -->
+
+        <!-- Review  Sof-->
+        <!-- Carousel wrapper -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"
+                    data-mdb-ride="carousel">
+                    <div class="section-title">
+                        <h2>Reviews</span></h2>
+                        <h1>Check out <span class="gradient-underline">our regular User</span> Feedbacks</h1>
+                    </div>
+                    <!-- Controls -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <button class="carousel-control-prev position-relative" type="button"
+                            data-mdb-target="#carouselMultiItemExample" data-mdb-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next position-relative" type="button"
+                            data-mdb-target="#carouselMultiItemExample" data-mdb-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- Inner -->
+                    <div class="carousel-inner py-4">
+                        <!-- Single item -->
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img class="rounded-circle shadow-1-strong mb-4" src="{% static 'user_assets/assets/img/b user.svg' %}"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Tony Stark</h5>
+                                        <p>Stain Removal</p>
+                                        <p class="text-muted">
+                                            <!-- <i class="fas fa-quote-left pe-2"></i> -->
+                                            I have an interview coming up, and my lucky shirt has become ruined with
+                                            coffee. I use DustToShine.io's stain removal service, and the results are
+                                            just wonderful. The stain is completely gone and it looks brand new. Good
+                                            service at a reasonable price.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-4 d-none d-lg-block">
+                                        <img class="rounded-circle shadow-1-strong mb-4" src="{% static 'user_assets/assets/img/user3.svg' %}"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Scarlett Johansson</h5>
+                                        <p>Simple Wash</p>
+                                        <p class="text-muted">
+                                            <!-- <i class="fas fa-quote-left pe-2"></i> -->
+                                            Because we all have last-minute plans, and my dress isn't ready at that
+                                            time. I ordered a simple wash service with an urgent delivery option, and my
+                                            outfit was ready in a single day. The nicest part is that I didn't have to
+                                            waste time on pick-up and delivery. Without a doubt, check it.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li>
+                                                <i class="fas fa-star-half-alt fa-sm"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-4 d-none d-lg-block">
+                                        <img class="rounded-circle shadow-1-strong mb-4" src="{% static 'user_assets/assets/img/user5.svg' %}"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Chris Evans</h5>
+                                        <p>Shoe Cleaning</p>
+                                        <p class="text-muted">
+                                            <!-- <i class="fas fa-quote-left pe-2"></i> -->
+                                            To me, looking good means wearing the best shoe. Your appearance will be
+                                            completed by the nice shoe. I use a shoe cleaning service, and believe me,
+                                            it works like magic and is quite good. The shoes appear to be brand new. I
+                                            now have my regular shoe laundry.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="far fa-star fa-sm"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Carousel not Working here  -->
+                        <!-- Single item -->
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img class="rounded-circle shadow-1-strong mb-4"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">John Doe</h5>
+                                        <p>UX Designer</p>
+                                        <p class="text-muted">
+                                            <i class="fas fa-quote-left pe-2"></i>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
+                                            officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-4 d-none d-lg-block">
+                                        <img class="rounded-circle shadow-1-strong mb-4"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Alex Rey</h5>
+                                        <p>Web Developer</p>
+                                        <p class="text-muted">
+                                            <i class="fas fa-quote-left pe-2"></i>
+                                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                                            suscipit laboriosam, nisi ut aliquid commodi.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li>
+                                                <i class="fas fa-star-half-alt fa-sm"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-4 d-none d-lg-block">
+                                        <img class="rounded-circle shadow-1-strong mb-4"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Maria Kate</h5>
+                                        <p>Photographer</p>
+                                        <p class="text-muted">
+                                            <i class="fas fa-quote-left pe-2"></i>
+                                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                            praesentium voluptatum deleniti atque corrupti.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="far fa-star fa-sm"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single item -->
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img class="rounded-circle shadow-1-strong mb-4"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Anna Deynah</h5>
+                                        <p>UX Designer</p>
+                                        <p class="text-muted">
+                                            <i class="fas fa-quote-left pe-2"></i>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
+                                            officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-4 d-none d-lg-block">
+                                        <img class="rounded-circle shadow-1-strong mb-4"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(8).webp"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">John Doe</h5>
+                                        <p>Web Developer</p>
+                                        <p class="text-muted">
+                                            <i class="fas fa-quote-left pe-2"></i>
+                                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                                            suscipit laboriosam, nisi ut aliquid commodi.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li>
+                                                <i class="fas fa-star-half-alt fa-sm"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-4 d-none d-lg-block">
+                                        <img class="rounded-circle shadow-1-strong mb-4"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(7).webp"
+                                            alt="avatar" style="width: 150px;" />
+                                        <h5 class="mb-3">Maria Kate</h5>
+                                        <p>Photographer</p>
+                                        <p class="text-muted">
+                                            <i class="fas fa-quote-left pe-2"></i>
+                                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                            praesentium voluptatum deleniti atque corrupti.
+                                        </p>
+                                        <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="fas fa-star fa-sm"></i></li>
+                                            <li><i class="far fa-star fa-sm"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Inner -->
+                </div>
+            </div>
+        </section>
+        <!-- Carosel -->
+        <!-- Carousel wrapper -->
+
+
+        <!-- ======= F.A.Q Section ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>F.A.Q</h2>
+                    <p>Frequently Asked Questions</p>
+                </div>
+
+                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">How long does it take to
+                            complete a
+                            simple wash?<i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                It is entirely dependent on the amount of your order. Simple wash takes on average 1-2
+                                business days to
+                                complete.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Is there any possibility
+                            of fabric
+                            damage during the stain removal service due to the use of scrub or chemicals? <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Stains are pre-treated with the appropriate type and amount of detergent. We do not
+                                scrub the stains too
+                                hard. We also select the appropriate wash cycle and temperature based on the fabric. We
+                                never use
+                                harmful chemicals in any of our services.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Is it possible to cancel
+                            the
+                            requested service?<i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Yes, you can. However, the service must be in the picked-up state. You cannot cancel the
+                                service once it
+                                has reached the processing stage.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Is there an extra charge
+                            for
+                            delivery?<i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                No. Our service includes both pickup and delivery. However, there are additional fees
+                                for the urgent
+                                delivery option.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Can you remove ink stains
+                            from my
+                            white shirt? <i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Knowing what type of ink caused the damage is essential for ink stain removal. It also
+                                depends on the
+                                fabric that is affected.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">what exactly does your
+                            shoe cleaning
+                            service entail?<i class="bi bi-chevron-down icon-show"></i><i
+                                class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Our Shoe Cleaning service includes a thorough cleaning of the entire shoe. Everything is
+                                cleaned, from
+                                the insole to the stitching, and each shoe is thoroughly cleaned to look as close to new
+                                as possible.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section><!-- End F.A.Q Section -->
+
+        
+
+        <!-- ======= Contact Us Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with Us</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>A108 Adam Street, Navrangpura, Ahmedabad - 380009</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>info@dts.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+91 81548 98059</p>
+                            </div>
+
+                            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.751401883972!2d72.54946431489087!3d23.03289828494779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f734242fcf%3A0xc365634c464bc1f0!2sSt.%20Xavier&#39;s%20College%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v1673975654035!5m2!1sen!2sin"
+                                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group col-md-6 mt-3 mt-md-0">
+                                    <label for="name">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="name">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="name">Message</label>
+                                <textarea class="form-control" name="message" rows="10" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Us Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Be the first one to know about Offers</p>
+
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>DustToShine.io</h3>
+                        <p>
+                            A108 Adam Street <br>
+                            Navrangpura, Ahmedabad-380009<br>
+                            India <br><br>
+                            <strong>Phone:</strong> +91 81548 98059<br>
+                            <strong>Email:</strong> info@dts.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Top 5 Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dry Cleaning</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Steam Press</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Simple Wash</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Stain Removal</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Shoe Cleaning</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <!-- <h4>Our Social Networks</h4>
+                        <p>Get more updates from our social media pages.</p> -->
+                        <p>Get more updates by Join Us.</p>
+            <img src="{% static 'user_assets/assets/img/dtssidelogo.png' %}" alt="" height="220px" width="200px">
+                        <!-- <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>DustToShine</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/ -->
+                Designed by <a href="index.html">DustToShine.io</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'user_assets/assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'user_assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'user_assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'user_assets/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'user_assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'user_assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'user_assets/assets/js/main.js' %}"></script>
+    {% endblock %}
+</body>
+
+</html>

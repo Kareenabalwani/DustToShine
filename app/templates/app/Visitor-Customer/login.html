@@ -1,0 +1,184 @@
+
+{% extends "app/Visitor-Customer/user_base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function validate(){
+        var x=document.getElementById('Name').value;
+        var y=document.getElementById('Pwd').value;
+        if (x!=="Sofiya150" && y!=="Sofiya786") {
+          alert("Bad Credentials");
+          return false;
+        }
+        return true;
+      }
+
+      function validate2(){
+        var a=document.getElementById('uname').value;
+        var b=document.getElementById('umail').value;
+        var c=document.getElementById('upwd').value;
+        var d=document.getElementById('ucontact').value;
+        var e=document.getElementById('upincode').value;
+        var atpos = b.indexOf("@");
+        var dotpos = b.lastIndexOf(".");
+        if (a=="Sofiya150"){
+          alert("User already exist");
+          return false;
+        }
+        if(a.length==0){
+          alert("Username is required");
+          return false;
+        }
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=b.length) {
+          alert("Please enter valid mail id");
+          return false;
+        }
+        if(c.length<8){
+          alert("Password must be of 8 characters or above");
+          return false;
+        }
+        if(d.length<10 || d.length>10){
+          alert("Please enter 10 digit contact number");
+          return false;
+        }
+        if(e.length!=6){
+          alert("Please enter 6 digit pincode");
+          return false;
+        }
+        return true;
+      }
+    </script>
+    <link rel="stylesheet" href="{% static 'user_assets/assets/css/lstyle.css' %}" />
+    <title>DustToShine.io - Your one stop laundry Solutions</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="{% url 'user_login' %}" class="sign-in-form" method="POST">
+            {% csrf_token %}
+            <h2 class="title">Login</h2>
+            {% if msg %}
+            <span style="color:red">{{msg}}</span>
+            {% endif %}
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="email" placeholder="Username"  name="email"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" id="Pwd" name="password"/>
+            </div>
+            <input type="submit" value="Login" class="btn solid" onclick="return validate()"/>
+            <p class="mt-20">Forget the Password ?<a href="changepass.html"> Request Password</a></p>
+            <!-- <p class="social-text">Login with social platforms</p> -->
+            <!-- <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div> -->
+          </form>
+          <form action="{% url 'user_signup' %}" class="sign-up-form" method="POST">
+            {% csrf_token %}
+            <h2 class="title">Sign up</h2>
+            {% if msg %}
+            <span style="color:red">{{msg}}</span>
+            {% endif %}
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Firstname" id="uname" name="fname"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Last name" id="lname" name="lname"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" id="umail" name="email"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" id="upwd" name="password"/>
+            </div>
+            <div class="input-field">
+                <i class="bi bi-telephone-fill"></i>
+                <input type="text" placeholder="Contact No" id="ucontact" name="contact"/>
+              </div>
+              <div class="input-field">
+                <i class="bi bi-house-door-fill"></i>
+                <input type="text" placeholder="Address" name="address"/>
+              </div>
+              <div class="input-field">
+                <i class="bi bi-geo-alt"></i>
+                <input type="text" placeholder="Pincode" id="upincode" name="pincode"/>
+
+              </div>
+              
+            <input type="submit" class="btn" value="Sign up" onclick="return validate2()" />
+            <!-- <p class="social-text">Sign up with social platforms</p> -->
+            <!-- <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div> -->
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Don't have an Account ?</h3>
+            <p>
+                Don't worry, we've got this. Click here to sign up and join us.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src="{% static 'user_assets/assets/img/login.svg' %}" class="image" alt=""  height="250px" width="150px"/>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Already have an Account ?</h3>
+            <p>
+                Return to the login page by clicking here.
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Login
+            </button>
+          </div>
+          <img src="{% static 'user_assets/assets/img/lock user.svg' %}" class="image" alt="" height="250px" width="150px"/>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'user_assets/assets/js/app.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>

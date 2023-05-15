@@ -1,0 +1,227 @@
+{% extends "app/Admin-DeliveryExecutive/admin_panel/pages/samples/admin_base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Change Status</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'admin_assets/assets/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_assets/assets/vendors/css/vendor.bundle.base.css' %}">
+    <style>
+        /* Custom dropdown */
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 10px;
+            /* demo only */
+        }
+
+        .custom-dropdown select {
+            /* background-color: #1abc9c; */
+            background-color: rgb(228, 89, 117);
+            color: #fff;
+            font-size: inherit;
+            padding: .5em;
+            padding-right: 2.5em;
+            border: 0;
+            margin: 0;
+            border-radius: 3px;
+            text-indent: 0.01px;
+            text-overflow: '';
+            -webkit-appearance: button;
+            /* hide default arrow in chrome OSX */
+        }
+
+        .custom-dropdown::before,
+        .custom-dropdown::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+
+        /*  Custom dropdown arrow */
+        /* .custom-dropdown::after {
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+} */
+
+        .custom-dropdown::before {
+            /*  Custom dropdown arrow cover */
+            width: 2em;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .custom-dropdown select[disabled] {
+            color: rgba(0, 0, 0, .3);
+        }
+
+        .custom-dropdown select[disabled]::after {
+            color: rgba(0, 0, 0, .1);
+        }
+
+        .custom-dropdown::before {
+            background-color: rgba(0, 0, 0, .15);
+        }
+
+        .custom-dropdown::after {
+            color: rgba(0, 0, 0, .4);
+        }
+    </style>
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+     
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:../../partials/_sidebar.html -->
+          
+            <!-- partial -->
+            <div class="main-panel" style="margin:auto">
+
+                <div class="content-wrapper">
+                    <div class="col-md-6 grid-margin stretch-card" style="margin: auto;">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"> Order and Payment status</h4>
+                                <p class="card-description"> change the order and payment status </p>
+                                <form class="forms-sample">
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">Order Id</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1"
+                                            placeholder="order id" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Customer Id</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            placeholder="customer id" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">Customer Address</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1"
+                                            placeholder="Customer address" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">Pincode</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1"
+                                            placeholder="pincode" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Order status</label>
+                                        <br>
+                                        <span class="custom-dropdown">
+                                            <select>
+                                                <option>Picked Up</option>
+                                                <option>In progress</option>
+                                                <option>Out for Delivery</option>
+                                                <option>Completed</option>
+
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <div class="form-group" >
+                                        <label for="status">Payment status</label>
+                                        <br>
+                                        <span class="custom-dropdown">
+                                            <select>
+                                                <option>Paid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                                <option>Not paid</option>
+
+
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order Status</button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Picked up</a>
+                              <a class="dropdown-item" href="#">In Progress</a>
+                              <a class="dropdown-item" href="#">Out for Delivery</a>
+                              <div role="separator" class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Completed</a>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        </div>
+                      </div> -->
+                                    <!-- <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                                        <input type="password" class="form-control" id="exampleInputConfirmPassword1"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="form-check form-check-flat form-check-primary">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input"> Remember me </label>
+                                    </div> -->
+                                    <input type="submit" class="btn btn-gradient-danger btn-fw" value="Submit" style="margin-top:.7em;">
+                                    <!-- <button type="submit" class="btn btn-gradient-primary me-2">Submit</button> -->
+                                    <button class="btn btn-light">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="container-fluid d-flex justify-content-between">
+                        <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright ©
+                            bootstrapdash.com 2021</span>
+                        <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a
+                                href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap
+                                admin template</a> from Bootstrapdash.com</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'admin_assets/assets/vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'admin_assets/assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'admin_assets/assets/js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'admin_assets/assets/js/misc.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+</body>
+{% endblock %}
+</html>

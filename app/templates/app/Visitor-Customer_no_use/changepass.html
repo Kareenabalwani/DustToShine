@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <!-- Favicons -->
+  <link href="assets/img/dtssidelogo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="lstyle.css" />
+    <title>DustToShine.io - Your one stop laundry Solutions</title>
+    <script>
+      function validate(){
+        var name=document.getElementById('umail').value;
+        if(name!=="sof2405@gmail.com"){
+          alert("User with this email doesn't exist");
+          return false;
+        }
+        return true;
+      }
+
+      function validate2(){
+        var name=document.getElementById('name').value;
+        var b=document.getElementById('pwd').value;
+        var c=document.getElementById('npwd').value;
+
+        if(name!=="Sofiya123"){
+          alert("Please enter valid username");
+          return false;
+        }
+
+        if(b!=="Sofiya786"){
+          alert("Please enter valid current password");
+          return false;
+        }
+
+        if(c.length<8){
+          alert("New password must be 8 characters long");
+          return false;
+        }
+        return true;
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="index.html" class="sign-in-form">
+            <h2 class="title">Forget Password</h2>
+            <div class="input-field">
+              <i class="bi bi-envelope"></i>
+              <input type="email" placeholder="Account Email address" id="umail"/>
+              <span id="errName" style="font-family:Trirong, serif; color:red;"></span>
+            </div>
+            
+            <input type="submit" value="Send Request" class="btn solid" onclick="return validate()"/>
+            <!-- <p class="social-text">Login with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div> -->
+          </form>
+          <form action="index.html" class="sign-up-form">
+            <h2 class="title">Change Password</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" id="name"/>
+            </div>
+            <!-- <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div> -->
+            <div class="input-field">
+              <!-- <i class="fas fa-lock"></i> -->
+              <i class="bi bi-lock"></i>
+              <input type="password" placeholder="Old Password" id="pwd"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="New Password" id="npwd"/>
+            </div>
+            <!-- <div class="input-field">
+                <i class="bi bi-telephone-fill"></i>
+                <input type="text" placeholder="Contact No" />
+              </div>
+              <div class="input-field">
+                <i class="bi bi-house-door-fill"></i>
+                <input type="text" placeholder="Address" />
+              </div>
+              <div class="input-field">
+                <i class="bi bi-geo-alt"></i>
+                <input type="text" placeholder="Pincode" />
+              </div> -->
+              
+            <input type="submit" class="btn" value="Reset" onclick="return validate2()"/>
+            <!-- <p class="social-text">Sign up with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div> -->
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Want to Change Password ?</h3>
+            <p>
+                Don't worry, we've got this. Click here to change your current login password to new one.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Change Password
+            </button>
+          </div>
+          <img src="assets/img/think.svg" class="image" alt=""  height="250px" width="150px"/>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Forget Your Password ?</h3>
+            <p>
+                Click here to Request for a new one.
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Request Password
+            </button>
+          </div>
+          <img src="assets/img/passchang.svg" class="image" alt="" height="250px" width="150px"/>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

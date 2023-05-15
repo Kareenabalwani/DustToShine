@@ -1,0 +1,507 @@
+
+
+{% extends "app/Admin-DeliveryExecutive/admin_panel/pages/samples/d_base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DustToSine | Delivery Executive Panel</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'admin_assets/assets/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_assets/assets/vendors/css/vendor.bundle.base.css' %}">
+    <style>
+        .card, .card-body{
+            overflow-x: auto;
+        }
+        /* .btn{
+            max-width:100%;
+            font-size: 0.8rem;
+            text-align: center;
+        } */
+    </style>
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <span style="font-family:fantasy; font-size:2.5vw;color:rgba(102, 42, 157, 0.767)">DustToShine.io</span>
+          <!-- <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a> -->
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="{% static 'admin_assets/assets/images/logo-mini.svg' %}" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+         
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="nav-profile-img">
+                  <img src="{% static 'admin_assets/assets/images/dashboard/rehan.jfif' %}" alt="image">
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black"> Rehan S.</p>
+                </div>
+              </a>
+              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+              </div>
+            </li>
+        
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                  <img src="{% static 'admin_assets/assets/images/dashboard/rehan.jfif' %}" alt="profile">
+                  <span class="login-status online"></span>
+                  <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                  <span class="font-weight-bold mb-2">{{dboy.fname}}</span>
+                  <span class="text-secondary text-small">Delivery Executive</span>
+                </div>
+                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+              </a>
+            </li>
+          
+         
+            <li class="nav-item sidebar-actions">
+              <span class="nav-link">
+              
+                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">Sign Out</button>
+                <div class="mt-4">
+                  <div class="border-bottom">
+                    <!-- <p class="text-secondary">Categories</p> -->
+                  </div>
+                  <!-- <ul class="gradient-bullet-list mt-4">
+                    <li>Free</li>
+                    <li>Pro</li>
+                  </ul> -->
+                </div>
+              </span>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          
+          <div class="content-wrapper">
+            <!-- //urgent orders -->
+              <!-- //urgent orders -->
+    <div class="col-lg-12 grid-margin stretch-card" style="overflow-x:auto;">
+      <div class="card">
+        <div class="card-body" style="overflow: hidden;
+                  overflow-x: auto;
+              ">
+              
+          <h4 class="card-title">Orders</h4>
+          <p class="card-description"> All the <span style="color:red">Urgent</span> orders <code></code>
+          </p>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Order id</th>
+                
+                <th>Order date</th>
+                <th>Quantity</th>
+                <th>Service Name</th>
+                <th>Customer Address</th>
+                <th>Pincode</th>
+                <th>order status</th>
+                <td>Net bill(in Rs.)</td>
+
+              </tr>
+            </thead>
+            <tbody>
+              
+              {% if urgent_order %}
+              {% for i in urgent_order %}
+             
+              <tr>
+                <td>{{i.order_id}}</td>
+                
+        
+                <td class="text-danger"> {{i.order_date}} </i></td>
+                <td>{{i.units}}</td>
+                <td>{{i.service_id.service_name}}</td>
+                
+                <td style="text-overflow:ellipsis">{{i.customer_id.address}}</td>
+                <td>{{i.customer_id.pincode}}</td>
+                {% if i.order_status == 0 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-danger btn-fw col-12"
+                  value="">Initial</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 1 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-warning btn-fw col-12"
+                  value="">Picked up</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 2 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-info btn-fw col-12"
+                  value="">In Progress</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 3 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-dark btn-fw col-12"
+                  value="">Out for Delivery</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 4 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-success btn-fw col-12"
+                  value="">Completed</a>
+                </td>                 
+                {% endif %}
+                 
+                <td>{{i.net_bill}}</td>
+
+              </tr>
+              {% endfor %}
+              {% endif %}
+              <!-- <tr>
+                <td>1002</td>
+                <td>4007</td>
+                <td class="text-danger"> 28/12/2022 </i></td>
+                <td>1</td>
+                <td>Curtain Cleaning</td>
+                <td>400 </td>
+                <td style="text-overflow:ellipsis">G-20 Arya Flats, Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-warning btn-fw col-12"
+                    value="In progress">Picked Up</td>
+                <td>360</td>
+
+              </tr>
+
+              <tr>
+                <td>1003</td>
+                <td>4004</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>4</td>
+                <td>Simple wash</td>
+                <td>60 </td>
+                <td style="text-overflow:ellipsis">44, Navdurga Society, Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-dark btn-fw col-12"
+                    value="In progress">Out For Delivery</td>
+                <td>54</td>
+
+              </tr>
+              <tr>
+                <td>1007</td>
+                <td>4005</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>10</td>
+                <td>Steam Press</td>
+                <td>500 </td>
+                <td style="text-overflow:ellipsis">88, Youva Apartments,Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-success btn-fw col-12"
+                    value="In progress">Success</td>
+                <td>450</td>
+
+              </tr> -->
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- all orders -->
+    <div class="col-lg-12 grid-margin stretch-card" style="overflow-x:auto">
+      <div class="card">
+        <div class="card-body" style="overflow: hidden;
+        overflow-x: auto;
+    ">
+          <h4 class="card-title">Orders</h4>
+          <p class="card-description"> All the <span style="color:red">All the</span> orders <code></code>
+          </p>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Order id</th>
+               
+                <th>Order date</th>
+                <th>Quantity</th>
+                <th>Service Name</th>
+                
+                <th>Customer Address</th>
+                <th>Pincode</th>
+                <th>Order status</th>
+                <td>Net bill(in Rs.)</td>
+
+              </tr>
+            </thead>
+
+            <tbody>
+
+              {% if n_order %}
+              {% for i in n_order %}
+             
+              <tr>
+                <td>{{i.order_id}}</td>
+                
+        
+                <td class="text-danger"> {{i.order_date}} </i></td>
+                <td>{{i.units}}</td>
+                <td>{{i.service_id.service_name}}</td>
+                
+                <td style="text-overflow:ellipsis">{{i.customer_id.address}}</td>
+                <td>{{i.customer_id.pincode}}</td>
+
+                {% if i.order_status == 0 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-danger btn-fw col-12"
+                  value="">Initial</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 1 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-warning btn-fw col-12"
+                  value="">Picked up</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 2 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-info btn-fw col-12"
+                  value="">In Progress</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 3 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-dark btn-fw col-12"
+                  value="">Out for Delivery</a>
+                </td>                 
+                {% endif %}
+                {% if i.order_status == 4 %}
+                <td>
+                  <a href="{% url 'd_boy_change_status' code=i.order_id  %}" class="btn btn-gradient-success btn-fw col-12"
+                  value="">Completed</a>
+                </td>                 
+                {% endif %}
+                <td>{{i.net_bill}}</td>
+
+              </tr>
+              {% endfor %}
+              {% endif %}
+              <!-- <tr>
+                <td>1008</td>
+                <td>4012</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>20</td>
+                <td>Simple Wash</td>
+                <td>300 </td>
+                <td style="text-overflow:ellipsis">A-09 Niyon Flats, Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-danger btn-fw col-12"
+                    value="In progress">In progress</td>
+                <td>270</td>
+
+              </tr>
+              <tr>
+                <td>1011</td>
+                <td>4009</td>
+                <td class="text-danger"> 28/12/2022 </i></td>
+                <td>3</td>
+                <td>Bag Cleaning</td>
+                <td>450</td>
+                <td style="text-overflow:ellipsis">G-55 Aahana Complex, Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-warning btn-fw col-12"
+                    value="In progress">Picked Up</td>
+                <td>405</td>
+
+              </tr>
+
+              <tr>
+                <td>1003</td>
+                <td>4004</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>5</td>
+                <td>Stean Press</td>
+                <td>250 </td>
+                <td style="text-overflow:ellipsis">44, Navdurga Society, Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-dark btn-fw col-12"
+                    value="In progress">Out For Delivery</td>
+                <td>225</td>
+
+              </tr>
+              <tr>
+                <td>1013</td>
+                <td>4015</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>3</td>
+                <td>Dry Cleaning</td>
+                <td>450 </td>
+
+                <td style="text-overflow:ellipsis">C/22,Mangalmurti Society, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-danger btn-fw col-12"
+                    value="In progress">In progress</td>
+                <td>405</td>
+
+              </tr>
+              <tr>
+                <td>1017</td>
+                <td>4018</td>
+                <td class="text-danger"> 28/12/2022 </i></td>
+                <td>15</td>
+                <td>Curtain Cleaning</td>
+                <td>6000 </td>
+                <td style="text-overflow:ellipsis">H/5 Arya Krishna Flats, Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-warning btn-fw col-12"
+                    value="In progress">Picked Up</td>
+                <td>5400</td>
+
+              </tr>
+
+              <tr>
+                <td>1019</td>
+                <td>4004</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>5</td>
+                <td>Bag Cleaning </td>
+                <td>750</td>
+                <td style="text-overflow:ellipsis">99, Himalaya Apartments,Naroda, Ahmedabad</td>
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-dark btn-fw col-12"
+                    value="In progress">Out For Delivery</td>
+                <td>675</td>
+
+              </tr>
+              <tr>
+                <td>1021</td>
+                <td>4004</td>
+                <td class="text-danger"> 27/12/2022 </i></td>
+                <td>10</td>
+                <td>Dry Cleaning </td>
+                <td>1500</td>
+                <td style="text-overflow:ellipsis">N-11,Manali Banglows,Naroda Ahmedabad</td>
+
+                <td>382341</td>
+                <td><a href="../samples/change_status_dboy.html" class="btn btn-gradient-success btn-fw col-12"
+                    value="In progress">Success</td>
+                <td>1350</td>
+
+              </tr> -->
+
+              <!-- <tr>
+                            <td>Jacob</td>
+                            <td>Photoshop</td>
+                            <td class="text-danger"> 28/12/2022 <i class="mdi mdi-arrow-down"></i></td>
+                            <td>$50</td>
+                            <td>1002</td>
+                            <td>14.50</td>
+                            <td><label class="badge badge-warning">In progress</label></td>
+                            <td>35.50</td>
+             
+                          </tr> -->
+
+              <!-- <tr>
+                            <td>Jacob</td>
+                            <td>Photoshop</td>
+                            <td class="text-success"> 28/12/2022 <i class="mdi mdi-arrow-up"></i></td>
+                            <td>$50</td>
+                            <td>1002</td>
+                            <td>14.50</td>
+                            <td><label class="badge badge-success">Completed</label></td>
+                            <td>35.50</td>
+             
+                          </tr> -->
+              <!-- <tr>
+                          <td>Messsy</td>
+                          <td>Flash</td>
+                          <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
+                          <td><label class="badge badge-warning">In progress</label></td>
+                        </tr> -->
+              <!-- <tr>
+                          <td>John</td>
+                          <td>Premier</td>
+                          <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
+                          <td><label class="badge badge-info">Fixed</label></td>
+                        </tr>
+                        <tr>
+                          <td>Peter</td>
+                          <td>After effects</td>
+                          <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i></td>
+                          <td><label class="badge badge-success">Completed</label></td>
+                        </tr>
+                        <tr>
+                          <td>Dave</td>
+                          <td>53275535</td>
+                          <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i></td>
+                          <td><label class="badge badge-warning">In progress</label></td>
+                        </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+              
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'admin_assets/assets/vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'admin_assets/assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'admin_assets/assets/js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'admin_assets/assets/js/misc.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+    {% endblock %}
+  </body>
+</html>

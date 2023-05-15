@@ -1,0 +1,196 @@
+
+{% extends "app/Visitor-Customer/user_base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'user_assets/assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'user_assets/assets/css/nservice.css' %}">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>DustToShine.io</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="hover-underline-animation" href="user.html">Home</a></li>
+          <li><a class="hover-underline-animation" href="uabout.html">About Us</a></li>
+          <li><a class="hover-underline-animation" href="services.html">Services</a></li>
+          <li><a class="hover-underline-animation" href="ucontact.html">Contact</a></li>
+          <li><a class="hover-underline-animation" href="ufranchise.html">Franchise</a></li>
+          <li class="hover-underline-animation"><a href="ucart.html"><span><i class="bi bi-basket3"></i> Laundry Bag</span></a>
+          <!-- <li><a class="getstarted scrollto" href="login.html">Get Started</a></li> -->
+          <li class="dropdown"><a href="#"><span><img src="{% static 'user_assets/assets/img/g user.svg' %}" alt="Image"
+            height="40px">{{request.session.name}}</span> <i class="bi bi-chevron-down"></i></a>
+<ul>
+    <li><a href="ueditprofile.html">Edit Profile</a></li>
+    <li><a href="order.html">My Orders</a></li>
+    <!-- <li><a href="#">Service Record</a></li> -->
+    <!-- <li><a href="#">Available Points</a><hr></li> -->
+    <hr>
+    <li><a href="changepass.html">Change Password</a></li>
+    <li><a href="index.html">Log Out</a></li>
+</ul>
+</li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- service -->
+  <section class="section" id="services">
+    <div class="section-title">
+      <h2>Services</h2>
+      <h3><span class="gradient-underline">You Leave It, We Clean It </span></h3>
+    </div>
+    <div class="container">
+      <div class="row">
+        {% if services %}
+        {% for i in services %}
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-center">
+              <!-- <div class="position-relative">
+                <img src="{% static 'user_assets/assets/img/wash cloth.svg' %}" alt="" height="150px" width="100px">
+              </div> -->
+              <div class="position-relative">
+                <img src="{{ i.service_img.url }}" alt="" height="150px" width="100px">
+              </div>
+              <h4 class="mb-4">{{i.service_name}}</h4>
+              <p>{{i.service_desc}}.
+              </p>
+            </div>
+            <div class="section-title">
+                            <a href="{% url 'single_service_page' pk=i.service_id%}" class="btn">
+                              <span>View Service</span>
+                            </a>
+                          </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+
+        <div class="section-title">
+          <a href="ucart.html" class="btn">
+
+            <span>View Laundry Bag</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /service -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Be Spotless, Be Bright</h4>
+            <p>One step will bring brightness into your life, Don't worry about stains we'll cast away all your worries.
+              you just  wear it, and we clean it. To learn more about us, Click below button.  One call cleans it all.
+              Your Choice, Our Promise...</p>
+            <div class="section-title">
+              <a href="uabout.html" class="btn">
+                <span>Know More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>DustToShine.io</h3>
+            <p>
+              A108 Adam Street <br>
+              Navrangpura, Ahmedabad-380009<br>
+              India <br><br>
+              <strong>Phone:</strong> +91 81548 98059<br>
+              <strong>Email:</strong> info@dts.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Top 5 Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dry Cleaning</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Steam Press</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Simple Wash</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Stain Removal</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Shoe Cleaning</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <!-- <h4>Our Social Networks</h4>
+            <p>Get more updates from our social media pages.</p> -->
+            <p>Get more updates by Join Us.</p>
+            <img src="{% static 'user_assets/assets/img/dtssidelogo.png' %}" alt="" height="220px" width="200px">
+            <!-- <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>DustToShine</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="index.html">DustToShine.io</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'user_assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'user_assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'user_assets/assets/js/main.js' %}"></script>
+  {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <title>DustToShine.io - Your One Stop Laundry Solution</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'user_assets/assets/img/dtssidelogo.png' %}" rel="icon">
+    <link href="{% static 'user_assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validate(){
+        var name=document.getElementById('inputFirstName').value;
+        if(name.length==0){
+          document.getElementById('errName').innerText="*First name cannot be null";
+          return false;
+        }
+
+        if (name.search(/[^a-zA-Z]/) !== -1) {
+          document.getElementById('errName').innerText="*First name should contain letters only";
+          return false;
+        }
+        return true;
+      }
+
+
+        function fName(){
+            document.getElementById('errName').innerText="";
+            return true;
+         }
+
+      function validate2(){
+        var name=document.getElementById('inputLastName').value;
+        if (name.search(/[^a-zA-Z]/) !== -1) {
+          document.getElementById('errLname').innerText="*Last name should contain letters only";
+          return false;
+        }
+        return true;
+      }
+
+
+    function LName(){
+        document.getElementById('errLname').innerText="";
+        return true;
+      }
+
+      function validatePincode(){
+        var e=document.getElementById('Pincode').value;
+        if(e.length!=6){
+          document.getElementById('errPincode').innerText="*Please enter 6 digit pincode";
+          return false;
+        }
+        return true;
+      }
+
+      function fPincode(){
+        document.getElementById('errPincode').innerText="";
+        return true;
+      }
+
+      function validateContact(){
+        var e=document.getElementById('Contact').value;
+        if(e.length!=6){
+          document.getElementById('errContact').innerText="*Please enter valid number of 10 digits";
+          return false;
+        }
+        return true;
+      }
+
+      function fContact(){
+        document.getElementById('errContact').innerText="";
+        return true;
+      }
+
+    </script>
+</head>
+
+<body>
+    <div class="container-xl px-4 mt-4">
+        <div class="row">
+            <div class="col-xl-4">
+
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Profile Picture</div>
+                    <div class="card-body text-center">
+
+                        <img class="img-account-profile rounded-circle mb-2" src="{% static 'user_assets/assets/img/g user.svg' %}" alt="">
+                        <h3>{{request.session.name}} {{user.lname}}</h3>
+
+                        <div class="small font-italic text-muted mb-2">UID: {{request.session.id}}</div>
+                        <!-- <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 5 MB</div>
+
+                        <button class="btn btn-primary" type="button">Upload new image</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+
+                <div class="card mb-4">
+                    <div class="card-header">Profile Details</div>
+                    <div class="card-body">
+                        <form action="{% url 'edit_profile' %}" method="POST">
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername"><b>User ID</b></label>
+                                <input class="form-control" id="inputUsername" type="text"
+                                    placeholder="Enter your username" value="{{request.session.id}}" name="uid" disabled >
+                            </div>
+
+                            <div class="row gx-3 mb-3">
+
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName"><b>First name</b></label>
+                                    <input class="form-control" id="inputFirstName" type="text"
+                                        placeholder="Enter your first name" value="{{user.fname}}" onfocus="fName()" onblur="validate()" name="fname">
+                                        <span id="errName" style="font-family:Trirong, serif; color:red;"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName"><b>Last name</b></label>
+                                    <input class="form-control" id="inputLastName" type="text"
+                                        placeholder="Enter your last name" value="{{user.lname}}" onfocus="LName()" onblur="validate2()" name="lname">
+                                        <span id="errLname" style="font-family:Trirong, serif; color:red;"></span>
+                                </div>
+                            </div>
+
+                            <div class="row gx-3 mb-3">
+
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputAddress"><b>Address</b></label>
+                                    <input class="form-control" id="inputAddress" type="text"
+                                        placeholder="Enter your address"
+                                        value="{{user.address}}" name="address">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation"><b>Pincode</b></label>
+                                    <input class="form-control" id="Pincode" type="text"
+                                        placeholder="Enter your location" value="{{user.pincode}}" name="pincode" onfocus="fPincode()" onblur="validatePincode()">
+                                        <span id="errPincode" style="font-family:Trirong, serif; color:red;"></span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress"><b>Email address</b></label>
+                                <input class="form-control" id="inputEmailAddress" type="email"
+                                    placeholder="Enter your email address" name="email" value="{{user.email}}" disabled>
+                            </div>
+
+                            <div class="row gx-3 mb-3">
+
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone"><b>Phone number</b></label>
+                                    <input class="form-control" id="Contact" type="tel"
+                                        placeholder="Enter your phone number" value="{{user.contact}}" onfocus="fContact()" onblur="validateContact()" name="contact">
+                                        <span id="errContact" style="font-family:Trirong, serif; color:red;"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday"><b>Available Points</b></label>
+                                    <img src="{% static 'user_assets/assets/img/reward.svg' %}" alt="" height="30px" width="40px">
+                                    <input class="form-control" id="inputnumber" type="number" name="points"
+                                        placeholder="Available Points" value="15" disabled>
+                                </div>
+                            </div>
+
+                            <input type="submit" class="btn btn-primary" value="Save changes" name="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        body {
+            margin-top: 20px;
+            background-color: #f2f6fc;
+            color: #27282a;
+        }
+
+        .img-account-profile {
+            height: 10rem;
+        }
+
+        .rounded-circle {
+            border-radius: 70% !important;
+        }
+
+        .card {
+            box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+        }
+
+        .card .card-header {
+            font-weight: 500;
+        }
+
+        .card-header:first-child {
+            border-radius: 0.35rem 0.35rem 0 0;
+        }
+
+        .card-header {
+            padding: 1rem 1.35rem;
+            margin-bottom: 0;
+            background-color: rgba(33, 40, 50, 0.03);
+            border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+        }
+
+        .form-control,
+        .dataTable-input {
+            display: block;
+            width: 100%;
+            padding: 0.875rem 1.125rem;
+            font-size: 0.900rem;
+            font-weight: 450;
+            line-height: 1;
+            color: #262729;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #c5ccd6;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.35rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn {
+            position: relative;
+            padding: 10px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #fff;
+            /* background-color: #eb5d1e; */
+            background: linear-gradient(37deg, #e9425b 1%, #eb5d1e 100%);
+            font-weight: 150px;
+            text-transform: uppercase;
+            transition: 1s all ease-in-out;
+            overflow: hidden;
+            align-content: center;
+        }
+
+        .btn:hover {
+            background: #ff667d;
+            transition: 0.3s all ease-in-out;
+            color: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+
+{% extends "app/Admin-DeliveryExecutive/admin_panel/pages/samples/admin_base.html" %}
+{% load static %}
+{% block content %}
+<html>
+  <head>
+    <!-- <script src="a.js"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <title> Admin | Update Service</title>
+    <script>
+      function validate(){
+        var name=document.getElementById('exampleInputName1').value;
+        if(name.length==0){
+          document.getElementById('errName').innerText="*Service name cannot be null";
+          return false;
+        }
+
+        if (name.search(/[^a-zA-Z]/) !== -1) {
+          document.getElementById('errName').innerText="*Service name should contain letters only";
+          return false;
+        }
+        return true;
+      }
+      function fName(){
+        document.getElementById('errName').innerText="";
+        return true;
+      }
+
+      function checkDisc(){
+        var price=document.getElementById('exampleInputEmail4').value;
+        if (price.search(/[^0-9]/) !== -1) {
+          document.getElementById('errDisc').innerText="*Discount must contain numerical values";
+          return false;
+        }
+      }
+
+      function fDisc(){
+        document.getElementById('errDisc').innerText="";
+        return true;
+      }
+
+      function checkPrice(){
+        var price=document.getElementById('exampleInputEmail3').value;
+        if (price<=0) {
+          document.getElementById('errPrice').innerText="*Please enter valid pricing";
+          return false;
+        }
+      }
+
+      function fPrice(){
+        document.getElementById('errPrice').innerText="";
+        return true;
+      }
+    </script>
+
+  </head>
+        <!-- partial -->
+        <div class="main-panel">
+
+          <div class="content-wrapper">
+            <div class="col-6 grid-margin stretch-card" style="margin: auto;">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Update an Existing Service</h4>
+                    <!-- <p class="card-description"> Fill the details of New Services </p> -->
+                    <form class="forms-sample">
+                        
+                       
+                      <div class="form-group" >
+                        <label for="exampleInputName1">Service Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" onfocus="fName()" onblur="validate()">
+                        <span id="errName" style="font-family:Trirong, serif; color:red;"></span>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Service Description</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Price</label>
+                        <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Price per Unit" onfocus="fPrice()" onblur="checkPrice()">
+                        <div id="errPrice" style="font-family:Trirong, serif; color:red;"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Discount per Service</label>
+                        <input type="text" class="form-control" id="exampleInputEmail4" placeholder="Discount per Service" onfocus="fDisc()" onblur="checkDisc()">
+                        <span id="errDisc" style="font-family:Trirong, serif; color:red;"></span>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="exampleSelectGender">Is enabled?</label>
+                        <select class="form-control" id="exampleSelectGender">
+                          <option>Enable</option>
+                          <option>Disable(keep disable for now)</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Upload Services image</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                          </span>
+                        </div>
+                      </div>
+                      <!-- <div class="form-group">
+                        <label for="exampleInputCity1">City</label>
+                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Textarea</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                      </div> -->
+                      <input type="submit" class="btn btn-gradient-danger btn-fw" id="updateS" value="Update Service" style="margin-top:.7em;">
+                      <!-- <button type="button" class="btn btn-gradient-danger btn-fw" style="margin-top:.7em;">Update Service</button> -->
+                      <!-- <button type="submit" class="btn btn-gradient-primary me-2">Add Executive</button> -->
+                      <!-- <button class="btn btn-light">Cancel</button> -->
+                      <input type="submit" class="btn btn-gradient-light btn-fw" value="Update Cancel" style="margin-top:.7em;">
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <!-- <footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+            </div>
+          </footer> -->
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'admin_assets/assets/vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'admin_assets/assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'admin_assets/assets/js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'admin_assets/assets/js/misc.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+    {% endblock %}
+  </body>
+</html>

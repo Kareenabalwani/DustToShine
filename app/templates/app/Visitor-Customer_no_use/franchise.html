@@ -1,0 +1,227 @@
+{% extends "app/Visitor-Customer/user_base.html" %}
+{% load static %}
+{% block content %}
+
+  <script>
+    function validate(){
+        var name=document.getElementById('fullname').value;
+        if(name.length==0){
+          document.getElementById('errfullname').innerText="*Name cannot be null";
+          return false;
+        }
+        if (name.search(/[^a-zA-Z]/) !== -1) {
+          document.getElementById('errfullname').innerText="*Name must contain letters only";
+          return false;
+        }
+        return true;
+      }
+
+
+      function fName(){
+        document.getElementById('errfullname').innerText="";
+        return true;
+      }
+
+      function validateLname(){
+        var name=document.getElementById('Lname').value;
+        if (name.search(/[^a-zA-Z]/) !== -1) {
+          document.getElementById('errLname').innerText="*Last name must contain letters only";
+          return false;
+        }
+        return true;
+      }
+
+
+      function fLname(){
+        document.getElementById('errLname').innerText="";
+        return true;
+      }
+
+      function validateE(){
+        var x=document.getElementById('Email').value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+          document.getElementById('errEmail').innerText="*Enter valid mail id";
+          return false;
+        }
+        
+        return true;
+      }
+
+      function fEmail(){
+        document.getElementById('errEmail').innerText="";
+      }
+
+      function validateC(){
+        var name=document.getElementById('Contact').value;
+        if (name.length < 10  || name.length > 10 ) {
+          document.getElementById('errContact').innerText="*Enter valid contact number";
+          return false;
+        }
+        return true;
+      }
+
+      function fC(){
+        document.getElementById('errContact').innerText="";
+      }
+
+      function validateLocation(){
+        var name=document.getElementById('Location').value;
+        if(name.length==0){
+          document.getElementById('errLocation').innerText="*Location is required";
+          return false;
+        }
+        return true;
+      }
+
+
+      function fLocation(){
+        document.getElementById('errLocation').innerText="";
+        return true;
+      }
+
+  </script>
+
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>DustToShine.io</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      
+       <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="hover-underline-animation" href="index.html">Home </a></li>
+          <li><a class="hover-underline-animation" href="about.html">About Us</a></li>
+          <li><a class="hover-underline-animation" href="nservice.html">Services</a></li> 
+          <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>  -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a class="hover-underline-animation" href="contact.html">Contact</a></li>
+          <li><a class="hover-underline-animation" href="franchise.html">Franchise</a></li>
+          <li><a class="getstarted scrollto" href="login.html">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <div class="container1">
+    <h1 class="form-title">Franchise</h1>
+    <form action="#">
+      <div class="main-user-info">
+        <div class="user-input-box">
+          <label for="fullName">First Name</label>
+          <input type="text"
+                  id="fullname"
+                  name="fullName"
+                  placeholder="Enter First Name"
+                  onfocus="fName()" onblur="validate()"/>
+                  <span id="errfullname" style="font-family:Trirong, serif; color:red;"></span>
+        </div>
+
+        
+        <div class="user-input-box">
+          <label for="fullName">Last Name</label>
+          <input type="text"
+                  id="Lname"
+                  name="fullName"
+                  placeholder="Enter Last Name"
+                  onfocus="fLname()" onblur="validateLname()"/>
+                  <span id="errLname" style="font-family:Trirong, serif; color:red;"></span>
+        </div>
+        <!-- <div class="user-input-box">
+          <label for="username">Username</label>
+          <input type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter Username"/>
+        </div> -->
+        <div class="user-input-box">
+          <label for="email">Email</label>
+          <input type="email"
+                  id="Email"
+                  name="email"
+                  placeholder="Enter Email"
+                  onfocus="fEmail()" onblur="validateE()"/>
+                  <span id="errEmail" style="font-family:Trirong, serif; color:red;"></span>
+        </div>
+        <div class="user-input-box">
+          <label for="phoneNumber">Contact Number</label>
+          <input type="text"
+                  id="Contact"
+                  name="phoneNumber"
+                  placeholder="Enter Phone Number"
+                  onfocus="fC()" onblur="validateC()"/>
+                  <span id="errContact" style="font-family:Trirong, serif; color:red;"></span>
+        </div>
+        <div class="user-input-box">
+          <label for="address">Location</label>
+          <input type="text"
+                  id="Location"
+                  name="address"
+                  placeholder="Enter Franchise Address"
+                  onfocus="fLocation()" onblur="validateLocation()"/>
+                  <span id="errLocation" style="font-family:Trirong, serif; color:red;"></span>
+        </div>
+        <div class="user-input-box">
+          <label for="Number">Capital</label>
+          <input type="number"
+                  id="number"
+                  name="number"
+                  placeholder="Enter Available Capital (INR)"/>
+        </div>
+        <!-- <div class="user-input-box">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"/>
+        </div> -->
+      </div>
+      <div class="gender-details-box">
+        <span class="gender-title">Past Experience</span>
+        <div class="gender-category">
+          <input type="radio" name="experience" id="yes">
+          <label for="yes">Yes</label>
+          <input type="radio" name="experience" id="no">
+          <label for="no">No</label>
+          <!-- <input type="radio" name="gender" id="other">
+          <label for="other">Other</label> -->
+        </div>
+      </div>
+      <div class="form-submit-btn">
+        <input type="submit" value="Request Franchise">
+      </div>
+    </form>
+  </div>
+
+  {% endblock%}  
+  </body>
+  
+</html>
